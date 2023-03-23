@@ -1,0 +1,16 @@
+{
+  "name": "k1-academy-child",
+  "version": "1.0.0",
+  "description": "The child theme of Pro for K1 Academy",
+  "main": "index.js",
+  "scripts": {
+    "start": "wp-scripts start",
+    "build": "wp-scripts build"
+  },
+  "author": "Kingdom One",
+  "license": "ISC",
+  "devDependencies": {
+    "@wordpress/scripts": "^24.0.0",
+    "dotenv-webpack": "^8.0.1"
+  }
+}

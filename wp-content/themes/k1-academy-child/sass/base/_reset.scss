@@ -1,0 +1,13 @@
+@use '../abstracts/variables';
+:root {
+	--color-primary: #{variables.$color-primary};
+}
+html {
+	font-size: 62.5% !important;
+	body {
+		font-size: 1.6rem;
+	}
+}
+header.x-header-landmark {
+	display: none;
+}

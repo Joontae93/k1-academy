@@ -1,0 +1,42 @@
+@use '../abstracts/mixins';
+@use '../abstracts/variables';
+@use 'sass:color';
+.lifterlms {
+	.llms-student-dashboard {
+		.llms-sd {
+			&-header {
+				@include mixins.displayFlex(column-reverse, flex-start, stretch);
+				margin-bottom: 2em;
+			}
+			&-nav {
+				background-color: color.adjust(variables.$color-grey, $lightness: 30%);
+				@include mixins.border(transparent);
+			}
+			&-items {
+				list-style: none;
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				&:before {
+					display: none;
+				}
+
+				a {
+					color: variables.$color-primary;
+					// transition: all variables.$transition--standard;
+					font-size: 1.2em;
+					&:hover {
+						color: white;
+						text-decoration: underline;
+						cursor: pointer;
+					}
+				}
+			}
+			&-item {
+				margin: 0 1em;
+				&.current {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}

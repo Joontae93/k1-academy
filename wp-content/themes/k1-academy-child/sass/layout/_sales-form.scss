@@ -1,0 +1,54 @@
+@use '../abstracts/mixins';
+@use '../abstracts/variables';
+.sales-form {
+	max-width: 80rem;
+	@include mixins.border;
+	padding: 2rem;
+	margin: 0 auto;
+	font-size: 1rem;
+	input[type='submit'] {
+		margin-top: 2em;
+	}
+	label {
+		font-size: 1.6rem;
+	}
+	h2 {
+		font-size: 2rem;
+	}
+}
+.the-user {
+	width: 100%;
+	& > div {
+		width: 80%;
+	}
+	border-bottom: 1px solid variables.$color-primary;
+	label {
+		font-weight: 700;
+	}
+	input {
+		width: 100%;
+	}
+}
+.the-courses {
+	.course {
+		@include mixins.displayFlex;
+		flex-wrap: nowrap;
+		label {
+			margin-left: 1rem;
+		}
+	}
+}
+.the-seats {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(15rem, 20rem));
+	justify-content: space-around;
+	@include mixins.respond(Tablet) {
+		grid-template-columns: 1fr;
+	}
+	border-bottom: 1px solid variables.$color-primary;
+	gap: 2rem;
+	margin: 2rem 0;
+	.licenses {
+		@include mixins.displayFlex(column);
+	}
+}
