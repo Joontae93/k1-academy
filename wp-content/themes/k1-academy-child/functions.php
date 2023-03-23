@@ -22,6 +22,10 @@ add_filter('x_enqueue_parent_stylesheet', '__return_true');
 // Additional Functions
 // =============================================================================
 
+
+require_once get_theme_file_path('/includes/llms-customizations.php');
+
+
 /**
  * enqueue child styles & scripts
  */
@@ -35,5 +39,3 @@ function child_enqueue_styles() {
     ));
 }
 add_action('wp_enqueue_scripts', 'child_enqueue_styles');
-
-include_once get_theme_file_path('/includes/llms-customizations.php');
