@@ -1,5 +1,5 @@
-@use '../abstracts/variables';
-@use '../abstracts/mixins';
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
 
 .x-btn {
 	text-shadow: none;
@@ -11,6 +11,7 @@
 	padding: 0.575em 0.85em;
 	font-size: 1em;
 	transition: all variables.$transition--standard;
+
 	&:hover,
 	&:active,
 	&:focus {
@@ -23,7 +24,7 @@
 	}
 }
 .button,
-[type='submit'],
+[type="submit"],
 .llms-button-secondary {
 	@extend .x-btn;
 }
