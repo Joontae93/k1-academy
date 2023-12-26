@@ -47,6 +47,7 @@ local-xdebuginfo.php
 /wp-content/upgrade-temp-backup/
 /wp-content/uploads/
 /wp-content/progressally-css/
+/wp-content/db.php
 
 # Caches
 /wp-content/cache/
