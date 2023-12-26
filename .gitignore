@@ -39,9 +39,9 @@ local-xdebuginfo.php
 
 
 # WP-Content
-/wp-content/upgrade/
 /wp-content/mu-plugins/
-
+/wp-content/upgrade/
+/wp-content/upgrade-temp-backup/
 /wp-content/uploads/
 /wp-content/progressally-css/
 
