@@ -3,6 +3,7 @@
 
 node_modules
 vendor
+.DS_Store
 
 # Core
 #
@@ -47,6 +48,7 @@ local-xdebuginfo.php
 /wp-content/upgrade-temp-backup/
 /wp-content/uploads/
 /wp-content/progressally-css/
+/wp-content/accessally-*
 /wp-content/db.php
 
 # Caches
