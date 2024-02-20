@@ -1,87 +1,184 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
-    "version": 2,
-	"styles":{
+	"version": 2,
+	"styles": {
 		"typography": {
-			"fontFamily":"\"Poppins\", \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\",Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\",\"Noto Color Emoji\""
+			"fontFamily": "var(--wp--preset--font-family--poppins)"
 		},
 		"spacing": {
-			"blockGap": "2rem"
-		
+			"blockGap": "20px"
 		}
 	},
-    "settings": {
-        "color": {
-			"custom":true,
-            "palette": [
-                {
-                    "name": "Black",
-                    "slug": "black",
-                    "color": "#000000"
-                },
-                {
-                    "name": "White",
-                    "slug": "white",
-                    "color": "#ffffff"
-                },
+	"settings": {
+		"appearanceTools": true,
+		"color": {
+			"custom": true,
+			"palette": [
 				{
-					"name":"Academy Green",
-					"slug":"primary",
-					"color":"#2b3636"
+					"name": "Academy Green",
+					"slug": "primary",
+					"color": "#2b3636"
 				},
 				{
-					"name":"Academy Gray",
-					"slug":"secondary",
-					"color":"#4b4b4b"
+					"name": "Academy Gray",
+					"slug": "secondary",
+					"color": "#4b4b4b"
 				},
 				{
-					"name":"Dark",
-					"slug":"dark",
-					"color":"#2a2a2a"
+					"name": "Dark",
+					"slug": "dark",
+					"color": "#2a2a2a"
+				},
+				{
+					"slug": "k1-green--classic",
+					"color": "#00ae83",
+					"name": "Classic K1 Green"
+				},
+				{
+					"slug": "k1-green--dark",
+					"color": "#00644b",
+					"name": "K1 Dark Green"
+				},
+				{
+					"name": "Black",
+					"slug": "black",
+					"color": "#000000"
+				},
+				{
+					"name": "White",
+					"slug": "white",
+					"color": "#ffffff"
+				},
+				{
+					"slug": "spark-yellow",
+					"color": "#f4c063",
+					"name": "Spark Yellow"
+				},
+				{
+					"slug": "ar-purple",
+					"color": "#9d9dcd",
+					"name": "Above Reproach Purple"
+				},
+				{
+					"slug": "ar-orange",
+					"color": "#e37f5a",
+					"name": "Above Reproach Orange"
+				},
+				{
+					"slug": "ar-yellow",
+					"color": "#f4eb27",
+					"name": "Above Reproach Yellow"
+				},
+				{
+					"slug": "drop-shadow",
+					"color": "rgba(0,0,0,.35)",
+					"name": "Drop Shadow"
 				}
-            ],
-			"gradients":[
+			],
+			"gradients": [
 				{
-					"name":"Dark Gray Gradient",
-					"slug":"dark-gray",
-					"gradient":"linear-gradient(to bottom, #4b4b4b 0%, #2a2a2a 100%)"
+					"name": "Dark Gray Gradient",
+					"slug": "dark-gray",
+					"gradient": "linear-gradient(to bottom, #4b4b4b 0%, #2a2a2a 100%)"
 				},
 				{
-					"name":"Darken Gradient",
-					"slug":"darken",
-					"gradient":"linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.25) 100%)"
+					"name": "Darken Gradient",
+					"slug": "darken",
+					"gradient": "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.25) 100%)"
 				},
 				{
-					"name":"Lighten Gradient",
-					"slug":"lighten",
-					"gradient":"linear-gradient(to bottom, transparent 0%, rgba(255,255,255,.75) 100%)"
+					"name": "Lighten Gradient",
+					"slug": "lighten",
+					"gradient": "linear-gradient(to bottom, transparent 0%, rgba(255,255,255,.75) 100%)"
 				}
 			],
 			"defaultGradients": false,
 			"defaultPalette": false
-        },
+		},
 		"typography": {
 			"lineHeight": true,
 			"fontWeight": true,
+			"fluid": {
+				"minFontSize": "16px",
+				"minViewportWidth": "1rem",
+				"maxViewportWidth": "1.5rem"
+			},
 			"textTransform": true,
-			"fontFamilies":[
+			"dropCap": false,
+			"fontFamilies": [
 				{
-					"name":"Poppins",
-					"slug":"poppins",
-					"fontFamily":"Poppins",
+					"name": "Poppins",
+					"slug": "poppins",
+					"fontFamily": "Poppins, sans-serif",
 					"fontFace": [
 						{
 							"fontFamily": "Poppins",
-							"fontStyle": "normal",
-							"fontWeight": "300 400 700",
-							"src": "url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap)",
+							"fontStyle": "italic",
+							"fontWeight": "300",
+							"src": "file:./assets/fonts/poppins/poppins-v20-latin-300italic.woff2",
 							"fontDisplay": "swap"
 						},
 						{
 							"fontFamily": "Poppins",
 							"fontStyle": "italic",
-							"fontWeight": "300 400 700",
-							"src": "url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap)",
+							"fontWeight": "400",
+							"src": "file:./assets/fonts/poppins/poppins-v20-latin-italic.woff2",
+							"fontDisplay": "swap"
+						},
+						{
+							"fontFamily": "Poppins",
+							"fontStyle": "italic",
+							"fontWeight": "700",
+							"src": "file:./assets/fonts/poppins/poppins-v20-latin-700italic.woff2",
+							"fontDisplay": "swap"
+						},
+						{
+							"fontFamily": "Poppins",
+							"fontStyle": "normal",
+							"fontWeight": "300",
+							"src": "file:./assets/fonts/poppins/poppins-v20-latin-300.woff2",
+							"fontDisplay": "swap"
+						},
+						{
+							"fontFamily": "Poppins",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": "file:./assets/fonts/poppins/poppins-v20-latin-normal.woff2",
+							"fontDisplay": "swap"
+						},
+						{
+							"fontFamily": "Poppins",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": "file:./assets/fonts/poppins/poppins-v20-latin-700.woff2",
+							"fontDisplay": "swap"
+						}
+					]
+				},
+				{
+					"name": "Roie",
+					"slug": "roie",
+					"fontFamily": "Roie, sans-serif",
+					"fontFace": [
+						{
+							"fontFamily": "roie",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": "file:./assets/fonts/roie/roie.otf",
+							"fontDisplay": "swap"
+						},
+						{
+							"fontFamily": "roie",
+							"fontStyle": "normal",
+							"fontWeight": "300",
+							"src": "file:./assets/fonts/roie/roie.otf",
+							"fontDisplay": "swap"
+						},
+						{
+							"fontFamily": "roie",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": "file:./assets/fonts/roie/roie.otf",
 							"fontDisplay": "swap"
 						}
 					]
@@ -89,20 +186,15 @@
 			]
 		},
 		"spacing": {
-			"blockGap":true,
+			"blockGap": true,
 			"customSpacingSize": true,
 			"margin": true,
 			"padding": true,
-			"units":[
-				"px",
-				"rem",
-				"vw",
-				"%"
-			]
+			"units": [ "px", "rem", "vw", "%" ]
 		},
 		"layout": {
 			"contentSize": "800px",
-			"wideSize": "1400px"
+			"wideSize": "1320px"
 		}
-    }
+	}
 }
