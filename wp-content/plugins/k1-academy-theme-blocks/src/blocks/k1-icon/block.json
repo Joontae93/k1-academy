@@ -1,0 +1,32 @@
+{
+	"$schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
+	"apiVersion": 3,
+	"name": "k1-block-theme/k1-icon",
+	"title": "K1 Icon Selector",
+	"category": "k1-academy-theme",
+	"description": "Grab a custom K1 icon",
+	"textdomain": "k1-academy-theme-blocks",
+	"supports": {
+		"color": {
+			"background": true,
+			"gradients": true,
+			"enableContrastChecker": true
+		}
+	},
+	"attributes": {
+		"color": {
+			"type": "string",
+			"default": "var(--wp--preset--color--white)"
+		},
+		"background": {
+			"type": "string",
+			"default": "var(--wp--preset--gradient--dark-gray)"
+		},
+		"icon": {
+			"type": "string",
+			"default": "justice"
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css"
+}
