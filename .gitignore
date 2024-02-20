@@ -59,7 +59,8 @@ local-xdebuginfo.php
 
 # Themes
 /wp-content/themes/*
-!/wp-content/themes/k1-academy-child/
+# !/wp-content/themes/k1-academy-child/
+!/wp-content/themes/k1-academy/
 
 
 # All plugins
@@ -68,6 +69,7 @@ local-xdebuginfo.php
 # uncomment the next line
 /wp-content/plugins/*
 !/wp-content/plugins/lifterlms-customizations-trunk
+!/wp-content/plugins/k1-academy-theme-blocks
 
 
 # All themes

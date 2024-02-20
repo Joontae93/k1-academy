@@ -1,0 +1,38 @@
+{
+  "$schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
+  "apiVersion": 3,
+  "name": "k1-academy-theme-blocks/banner-swiper",
+  "title": "Banner Swiper",
+  "category": "k1-academy-theme",
+  "description": "A swiper to display featured content in the Hero section of a page (as a banner)",
+  "textdomain": "k1-academy-theme-blocks",
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    },
+    "slides": {
+      "type": "array",
+      "default": []
+    },
+    "count": {
+      "type": "number",
+      "default": 4
+    }
+  },
+  "supports": {
+    "align": [
+      "full"
+    ]
+  },
+  "editorScript": "file:./index.js",
+  "script": [
+    "file:./swiper.js",
+    "homepage-swiper"
+  ],
+  "style": [
+    "file:./swiper.css",
+    "homepage-swiper"
+  ],
+  "render": "file:./render.php"
+}

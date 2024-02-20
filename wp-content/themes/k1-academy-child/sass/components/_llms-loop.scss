@@ -1,5 +1,5 @@
-@use "../abstracts/variables";
-@use "../abstracts/mixins";
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
 
 .llms-loop-item {
 	border-radius: 7px;
@@ -7,7 +7,6 @@
 	overflow: hidden;
 	transition: all variables.$transition--standard;
 	display: inline-block;
-
 	&:hover {
 		@include mixins.dropShadow;
 		transform: translateY(-4px);
@@ -20,11 +19,9 @@
 				height: 20px;
 				// 	.progress__indicator {
 				// 	}
-
 				.llms-progress-bar {
 					height: 20px;
 				}
-
 				// 	.progress-bar-complete {
 				// 	}
 			}
@@ -37,7 +34,6 @@
 			.llms-loop-item-footer {
 				.llms-author {
 					font-size: 1em;
-
 					.avatar.photo {
 						@include mixins.border(variables.$color-primary);
 						border-radius: 50%;

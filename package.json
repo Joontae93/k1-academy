@@ -1,6 +1,5 @@
 {
 	"name": "k1-academy-theme",
-	"main": "wp-content/themes/k1-academy/theme/src/index.js",
 	"version": "1.0.0",
 	"prettier": "@wordpress/prettier-config",
 	"browserslist": [
@@ -12,11 +11,12 @@
 		"packages-update": "wp-scripts packages-update",
 		"start": "wp-scripts start"
 	},
-	"devDependencies": {
-		"swiper": "^11.0.5"
-	},
 	"dependencies": {
-		"@wordpress/scripts": "^27.1.0",
-		"bootstrap": "^5.3.2"
+		"bootstrap": "^5.3.2",
+		"bootstrap-icons": "^1.11.3"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^27.2.0",
+		"eslint-config-react-app": "^7.0.1"
 	}
 }

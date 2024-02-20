@@ -6,8 +6,8 @@ import { myCopyright } from './modules/utilities';
 import { controller as customSalesApp } from './modules/customSalesForm/controller';
 
 function init() {
-	myCopyright( 'Kingdom One' );
+	myCopyright('Kingdom One');
 	dashboardControl();
-	if ( window.location.pathname === '/sales/' ) customSalesApp.init();
+	if (window.location.pathname === '/sales/') customSalesApp.init();
 }
 init();

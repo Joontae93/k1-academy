@@ -1,17 +1,17 @@
-const defaultConfig = require('@wordpress/scripts/config/webpack.config.js');
+const defaultConfig = require( '@wordpress/scripts/config/webpack.config.js' );
 
 /** The name of the theme. Alter me! */
-const THEME_NAME = 'k1-academy-theme';
+const THEME_NAME = 'k1-academy';
 
 /** The location of your theme. */
-const THEME_DIR = `/wp-content/themes/${THEME_NAME}`;
+const THEME_DIR = `/wp-content/themes/${ THEME_NAME }`;
 
 /**
  * Array of strings modeled after folder names (e.g. 'about-choctaw'). Inside of these folders, an `index.ts` file is expected. If that's not what you want, consider editing the `addEntries` function below.
  *
  * **Be sure to import page scss in these files**
  */
-const appNames = ['front-page'];
+const appNames = [  ];
 
 /**
  * For SCSS files (no leading `_`)
@@ -22,20 +22,18 @@ const styleSheets = []; // for scss only
 module.exports = {
 	...defaultConfig,
 	...{
-		entry: function () {
+		entry: () => {
 			/** Custom entry points */
-			const entries = {
-				global: `.${THEME_DIR}/src/index.js`,
-				// 'vendors/fontawesome': `.${ THEME_DIR }/src/js/vendors/fontawesome.js`,
-				'vendors/bootstrap': `.${THEME_DIR}/src/js/vendors/bootstrap.js`,
-				...addEntries(appNames, 'pages'),
-				...addEntries(styleSheets, 'styles'),
+			return {
+				global: `.${ THEME_DIR }/src/index.js`,
+				'vendors/bootstrap': `.${ THEME_DIR }/src/js/vendors/bootstrap.js`,
+				...addEntries( appNames, 'pages' ),
+				...addEntries( styleSheets, 'styles' ),
 			};
-			return entries;
 		},
 
 		output: {
-			path: __dirname + `${THEME_DIR}/dist`,
+			path: __dirname + `${ THEME_DIR }/dist`,
 			filename: `[name].js`,
 		},
 	},
@@ -46,30 +44,30 @@ module.exports = {
  * @param {array} array - Array of strings
  * @param {string} type - The type of entry. Either 'pages' or 'styles'
  */
-function addEntries(array, type) {
-	if (!Array.isArray(array)) {
-		throw new Error(`Expecting an array, received ${typeof array}!`);
+function addEntries( array, type ) {
+	if ( ! Array.isArray( array ) ) {
+		throw new Error( `Expecting an array, received ${ typeof array }!` );
 	}
-	if (0 >= array.length) {
+	if ( 0 >= array.length ) {
 		return {};
 	}
 	const entries = {};
-	array.forEach((asset) => {
-		const assetOutput = snakeToCamel(asset);
-		if (type === 'styles') {
+	array.forEach( ( asset ) => {
+		const assetOutput = snakeToCamel( asset );
+		if ( type === 'styles' ) {
 			entries[
-				`pages/${assetOutput}`
-			] = `.${THEME_DIR}/src/styles/pages/${asset}.scss`;
-		} else if (type === 'pages') {
+				`pages/${ assetOutput }`
+			] = `.${ THEME_DIR }/src/styles/pages/${ asset }.scss`;
+		} else if ( type === 'pages' ) {
 			entries[
-				`pages/${assetOutput}`
-			] = `.${THEME_DIR}/src/js/${asset}/index.ts`;
+				`pages/${ assetOutput }`
+			] = `.${ THEME_DIR }/src/js/${ asset }/index.ts`;
 		} else {
 			throw new Error(
-				`Invalid type! Expected "styles" or "pages", received "${type}"`,
+				`Invalid type! Expected "styles" or "pages", received "${ type }"`
 			);
 		}
-	});
+	} );
 	return entries;
 }
 
@@ -77,8 +75,8 @@ function addEntries(array, type) {
  *
  * @param {string} str - The string to be converted
  */
-function snakeToCamel(str) {
-	return str.replace(/([-_][a-z])/g, (group) =>
-		group.toUpperCase().replace('-', '').replace('_', ''),
+function snakeToCamel( str ) {
+	return str.replace( /([-_][a-z])/g, ( group ) =>
+		group.toUpperCase().replace( '-', '' ).replace( '_', '' )
 	);
 }

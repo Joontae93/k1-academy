@@ -1,0 +1,181 @@
+@use "../abstracts/variables" as v;
+$bootstrap-icons-font-dir: "bootstrap-icons/font/fonts" !default;
+@import 'bootstrap-icons/font/bootstrap-icons';
+
+// Required
+@import "bootstrap/scss/functions";
+
+/**
+* Colors
+* [MOVED] Colors are extended with the map below
+* If you want, you can override the $primary and $secondary here.
+*/
+
+$primary: v.$color-primary;
+$secondary: v.$color-grey;
+
+$body-bg-dark: $primary;
+$body-color-dark: white;
+$body-bg-light:$primary;
+$body-color-light: $secondary;
+
+// ================================================
+
+/**
+* Typography
+*/
+$font-family-sans-serif: v.$font-body;
+$font-family-monospace:
+	Monaspace Neon,
+	"Courier New",
+	monospace;
+
+$font-size-root: 62.5%; // Assuming browser is set to 16px, this will make 1rem = 10px
+$font-size-base: 1.6rem; // Sets the base font size to 16px
+
+// LINKS
+$link-decoration: none;
+
+// HEADINGS
+$headings-font-family: v.$font-body;
+$headings-font-weight: 700;
+
+$dropdown-font-size: 2.16rem;
+
+// ================================================
+
+/**
+* Buttons
+*/
+$btn-transition: all v.$transition--standard;
+
+$input-btn-padding-x: 1.2rem;
+$input-btn-padding-y: 0.6rem;
+
+$input-btn-padding-x-lg: 1.6rem;
+$input-btn-padding-y-lg: 0.8rem;
+
+$input-btn-padding-x: 0.8rem;
+$input-btn-padding-y: 0.4rem;
+
+
+
+// ================================================
+
+/**
+* Spacing
+*/
+$grid-gutter-width: 2.4rem; // 24px
+$spacer: 1.6rem; // 16px
+
+// ================================================
+
+/**
+* Navbar
+*/
+
+$navbar-light-active-color: $secondary;
+$navbar-light-hover-color: $secondary;
+$navbar-light-color: white;
+$navbar-light-icon-color: white;
+$navbar-light-toggler-border-color: white;
+$navbar-light-brand-color: white;
+$navbar-light-brand-hover-color: $secondary;
+
+// ================================================
+
+/**
+* Offcanvas
+*/
+
+// $offcanvas-bg-color: $primary;
+$offcanvas-color: white;
+
+// ================================================
+
+/**
+* Options
+* @see https://getbootstrap.com/docs/5.3/customize/options/
+*/
+$enable-shadows: true;
+$enable-dark-mode: true;
+
+// ================================================
+
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+
+
+// Add a custom color to $theme-colors
+$custom-colors: (
+	"dark": v.$color-dark,
+	'light':white
+);
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+
+// Required Bootstrap Modules
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+// Light mode
+// $custom-colors-text: ("custom-color": #712cf9);
+// $custom-colors-bg-subtle: ("custom-color": #e1d2fe);
+// $custom-colors-border-subtle: ("custom-color": #bfa1fc);
+
+// $theme-colors-text: map-merge($theme-colors-text, $custom-colors-text);
+// $theme-colors-bg-subtle: map-merge($theme-colors-bg-subtle, $custom-colors-bg-subtle);
+// $theme-colors-border-subtle: map-merge($theme-colors-border-subtle, $custom-colors-border-subtle);
+
+// Dark mode
+// $custom-colors-text-dark: ("custom-color": #e1d2f2);
+// $custom-colors-bg-subtle-dark: ("custom-color": #8951fa);
+// $custom-colors-border-subtle-dark: ("custom-color": #e1d2f2);
+
+// $theme-colors-text-dark: map-merge($theme-colors-text-dark, $custom-colors-text-dark);
+// $theme-colors-bg-subtle-dark: map-merge($theme-colors-bg-subtle-dark, $custom-colors-bg-subtle-dark);
+// $theme-colors-border-subtle-dark: map-merge($theme-colors-border-subtle-dark, $custom-colors-border-subtle-dark);
+
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+
+// Useful Bootstrap Utilities (Optional)
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/close";
+@import "bootstrap/scss/offcanvas";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/dropdown";
+
+// Optional Bootstrap Modules (w/ Dependencies)
+@import "bootstrap/scss/type";
+// @import "bootstrap/scss/images";
+// @import "bootstrap/scss/tables";
+// @import "bootstrap/scss/forms";
+@import "bootstrap/scss/button-group";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar"; // Requires nav
+// @import "bootstrap/scss/card";
+// @import "bootstrap/scss/breadcrumb";
+// @import "bootstrap/scss/accordion";
+// @import "bootstrap/scss/pagination";
+// @import "bootstrap/scss/badge";
+// @import "bootstrap/scss/alert";
+// @import "bootstrap/scss/progress";
+// @import "bootstrap/scss/list-group";
+// @import "bootstrap/scss/toasts";
+@import "bootstrap/scss/modal"; // Requires transitions
+// @import "bootstrap/scss/tooltip";
+// @import "bootstrap/scss/popover";
+// @import "bootstrap/scss/carousel";
+// @import "bootstrap/scss/spinners";
+// @import "bootstrap/scss/placeholders";
+
+// Helpers
+@import "bootstrap/scss/helpers";
+
+// Utilities
+@import "bootstrap/scss/utilities/api";
+
