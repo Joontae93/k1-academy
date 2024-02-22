@@ -11,10 +11,6 @@
       "type": "string",
       "default": "full"
     },
-    "slides": {
-      "type": "array",
-      "default": []
-    },
     "count": {
       "type": "number",
       "default": 4

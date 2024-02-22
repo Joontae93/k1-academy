@@ -1,11 +1,30 @@
 import React from '@wordpress/element';
-import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, PanelRow, SelectControl } from '@wordpress/components';
+import {
+	useBlockProps,
+	InspectorControls,
+	RichText,
+} from '@wordpress/block-editor';
+import {
+	PanelBody,
+	PanelRow,
+	SelectControl,
+	TextControl,
+} from '@wordpress/components';
 import * as icon from './icon-set';
 
-export default function EditComponent( { attributes, setAttributes } ) {
-	const { background, color, icon } = attributes;
-	const blockProps = useBlockProps();
+export default function EditComponent( {
+	attributes,
+	setAttributes,
+	isSelected,
+} ) {
+	const { background, color, icon, link, text } = attributes;
+	const blockProps = useBlockProps( {
+		style: {
+			background: background,
+			color: color,
+		},
+		className: 'k1-icon',
+	} );
 
 	return (
 		<>
@@ -18,37 +37,46 @@ export default function EditComponent( { attributes, setAttributes } ) {
 								value={ icon }
 								options={ [
 									{ label: 'Academy', value: 'academy' },
-									{ label: 'finance', value: 'finance' },
-									{ label: 'hr', value: 'hr' },
-									{ label: 'justice', value: 'justice' },
-									{ label: 'marcom', value: 'marcom' },
-									{ label: 'spark', value: 'spark' },
-									{ label: 'staffing', value: 'staffing' },
-									{ label: 'strategy', value: 'strategy' },
-									{ label: 'webDev', value: 'webDev' },
+									{ label: 'Finance', value: 'finance' },
+									{ label: 'HR', value: 'hr' },
+									{ label: 'Justice', value: 'justice' },
+									{ label: 'Marcom', value: 'marcom' },
+									{ label: 'Spark', value: 'spark' },
+									{ label: 'Staffing', value: 'staffing' },
+									{ label: 'Strategy', value: 'strategy' },
+									{ label: 'Web Dev', value: 'webDev' },
 								] }
 								onChange={ ( icon ) =>
 									setAttributes( { icon: icon } )
+								}
+							/>
+							<TextControl
+								className="k1-icon__link-box"
+								label="icon link:"
+								value={ link }
+								onChange={ ( link ) =>
+									setAttributes( { link } )
 								}
 							/>
 						</div>
 					</PanelRow>
 				</PanelBody>
 			</InspectorControls>
-			<div
-				{ ...blockProps }
-				style={ {
-					backgroundColor: background,
-					color: color,
-				} }
-			>
-				{ getIcon( icon ) }
+			<div { ...blockProps }>
+				<div className="k1-icon__container">{ getIcon( icon ) }</div>
+				<RichText
+					className="k1-icon__text"
+					value={ text }
+					placeholder="Icon Text"
+					onChange={ ( text ) => setAttributes( { text } ) }
+					tag="span"
+				/>
 			</div>
 		</>
 	);
 }
 
-function getIcon( iconName ) {
+export function getIcon( iconName ) {
 	switch ( iconName ) {
 		case 'academy':
 			return icon.academy;

@@ -11,7 +11,11 @@
       "background": true,
       "gradients": true,
       "enableContrastChecker": true
-    }
+    },
+    "typography": {
+      "fontSize": true
+    },
+    "layout": true
   },
   "attributes": {
     "color": {
@@ -25,8 +29,16 @@
     "icon": {
       "type": "string",
       "default": "justice"
+    },
+    "text": {
+      "type": "string",
+      "default": "Human Resources"
+    },
+    "link": {
+      "type": "string",
+      "default": ""
     }
   },
   "editorScript": "file:./index.js",
-  "style": "file:./style-index.css"
+  "style": "file:./index.css"
 }

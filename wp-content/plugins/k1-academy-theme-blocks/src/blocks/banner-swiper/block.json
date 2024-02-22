@@ -11,21 +11,16 @@
 			"type": "string",
 			"default": "full"
 		},
-		"slides": {
-			"type": "array",
-			"default": []
-		},
-		"count":{
+		"count": {
 			"type": "number",
 			"default": 4
-		
 		}
 	},
 	"supports": {
-		"align": ["full"]
+		"align": [ "full" ]
 	},
 	"editorScript": "file:./index.js",
-	"script":["file:./swiper.js","homepage-swiper"],
-	"style": ["file:./swiper.css","homepage-swiper"],
-	"render":"file:./render.php"
-  }
+	"script": [ "file:./swiper.js", "homepage-swiper" ],
+	"style": [ "file:./swiper.css", "homepage-swiper" ],
+	"render": "file:./render.php"
+}

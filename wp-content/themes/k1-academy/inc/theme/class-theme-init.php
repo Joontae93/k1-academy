@@ -144,6 +144,7 @@ class Theme_Init {
 	public function k1academy_theme_support() {
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'title-tag' );
+		add_theme_support( 'custom-logo' );
 
 		add_image_size( 'banner_image', 3840, 2160 );
 		add_image_size( 'course_preview_thumb', 796, 428 );

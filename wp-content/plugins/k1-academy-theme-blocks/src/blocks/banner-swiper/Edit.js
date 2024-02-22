@@ -6,7 +6,6 @@ import { Spinner } from '@wordpress/components';
 import { initSwiper } from './swiper';
 
 export default function Edit() {
-	const blockProps = useBlockProps();
 	const [ slides, setSlides ] = useState( null );
 	const [ errorMessage, setErrorMessage ] = useState( null );
 	const swiper = useRef( null );
@@ -29,6 +28,11 @@ export default function Edit() {
 		}
 	}, [ swiper, slides ] );
 
+	const blockProps = useBlockProps( {
+		className: 'k1-block-banner-swiper swiper',
+		ref: swiper,
+	} );
+
 	if ( ! slides && ! errorMessage ) return <Spinner />;
 	if ( errorMessage ) {
 		return (
@@ -39,12 +43,7 @@ export default function Edit() {
 	}
 	if ( slides ) {
 		return (
-			<div
-				class="swiper"
-				{ ...blockProps }
-				id="homepage-banner-swiper"
-				ref={ swiper }
-			>
+			<div { ...blockProps } id="homepage-banner-swiper">
 				<div className="swiper-wrapper">
 					{ slides.map( ( slide ) => {
 						return (

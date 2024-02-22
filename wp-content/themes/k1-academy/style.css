@@ -11,3 +11,22 @@ Requires PHP: 8.1
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 */
+
+/* Normal width */
+.entry-content > *,
+.site-content > * {
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Wide width */
+.alignwide {
+	max-width: 1320px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignfull {
+	max-width: none;
+}

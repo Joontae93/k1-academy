@@ -7,7 +7,7 @@
 
 get_header();
 ?>
-<main class='<?php echo "site-content {$post->post_name}"; ?>'>
+<main class='<?php echo implode( ' ', get_post_class( array( 'container-fluid', 'site-content', $post->post_name ) ) ); ?>'>
 	<article class="container">
 		<?php the_content(); ?>
 	</article>

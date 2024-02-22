@@ -18,10 +18,10 @@ if ( ! $slides->have_posts() ) {
 	return;
 }
 ?>
-<div class="swiper py-1 mb-4" id="homepage-banner-swiper">
+<div class="swiper py-1 mb-4 alignfull" id="homepage-banner-swiper">
 	<div class="swiper-wrapper">
 		<?php while ( $slides->have_posts() ) : ?>
-		<?php
+			<?php
 			$slides->the_post();
 			$slider_link = get_field( 'slider_url' );
 			$target      = empty( $slider_link['target'] ) ? '' : 'target="' . $slider_link['target'] . '"';
