@@ -15,7 +15,11 @@
     "typography": {
       "fontSize": true
     },
-    "layout": true
+    "layout": true,
+    "spacing": {
+      "padding": true,
+      "margin": true
+    }
   },
   "attributes": {
     "color": {
