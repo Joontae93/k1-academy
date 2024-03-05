@@ -40,6 +40,9 @@ class Theme_Init {
 
 		require_once $base_path . '/theme/rest-routes/class-k1-rest-controller.php';
 		new K1_REST_Controller();
+
+		require_once $base_path . '/theme/post-types/class-homepage-banner-slides.php';
+		new Homepage_Banner_Slides();
 	}
 
 	/** Remove comments, pings and trackbacks support from posts types. */
@@ -98,8 +101,6 @@ class Theme_Init {
 			)
 		);
 
-		// $fontawesome = new Asset_Loader( 'fontawesome', Enqueue_Type::style, 'vendors' );
-
 		$global_scripts = new Asset_Loader(
 			'global',
 			Enqueue_Type::both,
@@ -118,27 +119,8 @@ class Theme_Init {
 			array( 'global' ),
 			wp_get_theme()->get( 'Version' )
 		);
-
-		// $this->remove_wordpress_styles(
-		// array(
-		// 'classic-theme-styles',
-		// 'wp-block-library',
-		// 'dashicons',
-		// 'global-styles',
-		// )
-		// );
 	}
 
-	/**
-	 * Provide an array of handles to dequeue.
-	 *
-	 * @param array $handles the script/style handles to dequeue.
-	 */
-	private function remove_wordpress_styles( array $handles ) {
-		foreach ( $handles as $handle ) {
-			wp_dequeue_style( $handle );
-		}
-	}
 
 	/** Registers Theme Supports */
 	public function k1academy_theme_support() {

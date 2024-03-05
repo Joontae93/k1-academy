@@ -10,9 +10,7 @@ namespace KingdomOne;
 /**
  * Custom Rest Route
  */
-class K1_REST_Controller {
-	private $namespace;
-	private $version;
+class K1_REST_Controller extends \WP_REST_Controller {
 
 	/**
 	 * Constructor
@@ -31,8 +29,8 @@ class K1_REST_Controller {
 			$this->namespace,
 			'/homepage-slides',
 			array(
-				'methods'             => 'GET',
-				'callback'            => array( $this, 'get_the_slides' ),
+				'methods'             => \WP_REST_Server::READABLE,
+				'callback'            => array( $this, 'get_items' ),
 				'permission_callback' => function () {
 					return current_user_can( 'edit_posts' );
 				},
@@ -42,18 +40,23 @@ class K1_REST_Controller {
 
 	/**
 	 * Get Courses
+	 *
+	 * @param \WP_REST_Request $request Request Object.
 	 */
-	public function get_the_slides() {
+	public function get_items( $request ) {
 		$response = new \WP_REST_Response( null, 200 );
 		$slides   = new \WP_Query(
 			array(
 				'post_type'      => 'homepage-slide',
+				'orderby'        => 'meta_value',
+				'meta_key'       => 'slider_order',
+				'order'          => 'ASC',
 				'posts_per_page' => 6,
+
 			)
 		);
 		if ( ! $slides->have_posts() ) {
-			$response->set_data( array( 'message' => 'No slides found' ) );
-			$response->set_status( 500 );
+			$response = new \WP_Error( 'no_slides', 'No slides found', array( 'status' => 500 ) );
 		} else {
 			$data = array();
 			while ( $slides->have_posts() ) {
@@ -69,7 +72,7 @@ class K1_REST_Controller {
 						'srcset' => \wp_get_attachment_image_srcset( $thumbnail_id, 'banner_image' ),
 					),
 					'link'        => get_field( 'slider_url' ),
-					'slide_order' => get_field( 'slide_order' ),
+					'slide_order' => get_field( 'slider_order' ),
 				);
 			}
 			wp_reset_postdata();
