@@ -1,0 +1,55 @@
+{
+  "$schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
+  "apiVersion": 3,
+  "name": "k1-academy-theme-blocks/courses-swiper",
+  "title": "Courses Swiper",
+  "category": "k1-academy-theme",
+  "description": "A swiper to display courses in a certain taxonomy",
+  "textdomain": "k1-academy-theme-blocks",
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "align": {
+      "type": "string",
+      "default": "wide"
+    },
+    "selectedCategoryId": {
+      "type": "number"
+    },
+    "count": {
+      "type": "number",
+      "default": 4
+    },
+    "courses": {
+      "type": "array",
+      "default": []
+    }
+  },
+  "supports": {
+    "align": [
+      "full",
+      "wide"
+    ],
+    "color": {
+      "gradients": true,
+      "text": true
+    },
+    "typography": {
+      "fontSize": true
+    },
+    "dimensions": {
+      "spacing": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "script": [
+    "file:./swiper.js",
+    "courses-swiper"
+  ],
+  "style": [
+    "file:./swiper.css",
+    "courses-swiper"
+  ],
+  "render": "file:./render.php"
+}

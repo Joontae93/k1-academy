@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from '@wordpress/element';
 import { useBlockProps } from '@wordpress/block-editor';
 import apiFetch from '@wordpress/api-fetch';
 import { Spinner } from '@wordpress/components';
+import { addQueryArgs } from '@wordpress/url';
 import { initSwiper } from './swiper';
 
 export default function Edit() {

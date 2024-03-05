@@ -15,6 +15,7 @@ function register_blocks() {
 	$blocks = array(
 		array( 'name' => 'banner-swiper' ),
 		array( 'name' => 'k1-icon' ),
+		array( 'name' => 'courses-swiper' ),
 	);
 	foreach ( $blocks as $block ) {
 		register_block_type(
