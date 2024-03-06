@@ -1,5 +1,4 @@
 import { registerBlockType } from '@wordpress/blocks';
-import './index.scss';
 import block from './block.json';
 import Edit from './Edit';
 import { icon } from '../block-icon';

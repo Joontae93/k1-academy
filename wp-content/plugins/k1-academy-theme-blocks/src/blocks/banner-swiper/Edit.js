@@ -3,8 +3,7 @@ import React, { useState, useEffect, useRef } from '@wordpress/element';
 import { useBlockProps } from '@wordpress/block-editor';
 import apiFetch from '@wordpress/api-fetch';
 import { Spinner } from '@wordpress/components';
-import { addQueryArgs } from '@wordpress/url';
-import { initSwiper } from './swiper';
+import { initBannerSwiper, initSwiper } from './swiper';
 
 export default function Edit() {
 	const [ slides, setSlides ] = useState( null );
@@ -25,7 +24,7 @@ export default function Edit() {
 
 	useEffect( () => {
 		if ( slides && swiper ) {
-			initSwiper( swiper.current );
+			initBannerSwiper( swiper.current );
 		}
 	}, [ swiper, slides ] );
 

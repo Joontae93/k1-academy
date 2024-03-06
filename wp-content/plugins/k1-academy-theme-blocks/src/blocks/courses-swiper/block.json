@@ -14,16 +14,12 @@
 			"type": "string",
 			"default": "wide"
 		},
-		"selectedCategoryId": {
-			"type": "number"
+		"categoryId": {
+			"type": "string"
 		},
 		"count": {
 			"type": "number",
 			"default": 4
-		},
-		"courses": {
-			"type": "array",
-			"default": []
 		}
 	},
 	"supports": {

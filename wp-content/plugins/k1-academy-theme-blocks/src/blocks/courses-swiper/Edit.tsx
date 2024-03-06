@@ -8,57 +8,58 @@ import {
 import apiFetch from '@wordpress/api-fetch';
 import { Spinner, QueryControls, PanelBody } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
+import { initCourseSwiper } from './swiper';
 
 export default function Edit( { attributes, setAttributes } ) {
-	const { label, count, selectedCategoryId } = attributes;
+	const { label, count, categoryId, align } = attributes;
 	const [ slides, setSlides ] = useState( null );
 	const [ errorMessage, setErrorMessage ] = useState( null );
 	const terms = useSelect( ( select ) => {
 		return select( 'core' ).getEntityRecords( 'taxonomy', 'course_cat', {
-			per_page: -1,
+			per_page: 12,
 		} );
 	} );
-
 	const swiper = useRef( null );
 
 	const blockProps = useBlockProps( {
-		className: 'k1-block-courses-swiper swiper',
-		// ref: swiper,
+		className: `k1-block-courses-swiper swiper align${ align }`,
+		ref: swiper,
 	} );
 
 	useEffect( () => {
 		const fetchPosts = async () => {
 			const posts = await apiFetch( {
-				path: `/wp/v2/course?per_page=${ count }&categories=${ selectedCategoryId }`,
+				path: `/k1academy/v1/course-slides?categories=${ categoryId }`,
 			} );
-			console.log( posts );
 			if ( posts ) {
 				setSlides( posts );
 			}
 		};
-		fetchPosts();
-	}, [ selectedCategoryId, count ] );
+		if ( categoryId ) {
+			fetchPosts();
+		}
+	}, [ categoryId, count ] );
+
+	useEffect( () => {
+		if ( slides && swiper ) {
+			initCourseSwiper( swiper.current );
+		}
+	}, [ swiper, slides ] );
 
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody
-					title="Course Swiper Settings"
-					style={ { width: '100%' } }
-				>
+				<PanelBody title="Course Swiper Settings">
 					<QueryControls
 						numberOfItems={ count }
-						minItems={ 1 }
-						maxItems={ 10 }
 						onNumberOfItemsChange={ ( count ) =>
 							setAttributes( { count } )
 						}
-						selectedCategoryId={ selectedCategoryId }
+						maxItems={ 12 }
+						selectedCategoryId={ categoryId }
 						categoriesList={ terms }
-						onCategoryChange={ ( newTerm ) => {
-							setAttributes( {
-								selectedCategoryId: newTerm,
-							} );
+						onCategoryChange={ ( categoryId ) => {
+							setAttributes( { categoryId } );
 						} }
 					/>
 				</PanelBody>
@@ -76,21 +77,39 @@ export default function Edit( { attributes, setAttributes } ) {
 				</div>
 			) }
 			{ slides && (
-				<div { ...blockProps } id="homepage-banner-swiper">
+				<div { ...blockProps }>
 					<div className="swiper-wrapper">
 						{ slides.map( ( slide ) => {
 							return (
-								<div className="swiper-slide" key={ slide.id }>
-									<img
-										src={ slide.image.src }
-										alt={ slide.image.alt || slide.title }
-										srcSet={ slide.image.srcSet }
-										loading="lazy"
-									/>
-								</div>
+								slide.image.src && (
+									<div
+										className="swiper-slide"
+										key={ slide.id }
+									>
+										<div className="swiper-slide__container">
+											<img
+												className="swiper-slide__image"
+												src={ slide.image.src }
+												alt={
+													slide.image?.alt ||
+													slide.title
+												}
+												srcSet={
+													slide.image?.srcSet || ''
+												}
+											/>
+											<div className="swiper-slide__image--overlay" />
+											<h3 className="swiper-slide__title">
+												{ slide.title }
+											</h3>
+										</div>
+									</div>
+								)
 							);
 						} ) }
 					</div>
+					<div className="swiper-button-prev" />
+					<div className="swiper-button-next" />
 				</div>
 			) }
 		</>

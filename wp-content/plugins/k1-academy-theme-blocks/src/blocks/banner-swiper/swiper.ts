@@ -6,7 +6,7 @@ import 'swiper/scss/a11y';
 import 'swiper/scss/autoplay';
 import './index.scss';
 
-export function initSwiper( el?: HTMLElement ) {
+export function initBannerSwiper( el?: HTMLElement ) {
 	const swiperEl = el || document.getElementById( 'homepage-banner-swiper' )!;
 	if ( ! swiperEl ) {
 		return;
@@ -14,17 +14,11 @@ export function initSwiper( el?: HTMLElement ) {
 	const progressCircle = document.querySelector( '.autoplay-progress svg' );
 	const swiper = new Swiper( swiperEl, {
 		modules: [ Pagination, A11y, Autoplay ],
-		// loop: true,
 		autoplay: {
 			delay: 5 * 1000,
 			disableOnInteraction: true,
 		},
 		spaceBetween: 0,
-		// centeredSlides: true,
-		// centeredSlidesBounds: true,
-		// centerInsufficientSlides: true,
-		// slidesPerView: 'auto',
-		// slidesPerGroup: 1,
 		pagination: {
 			el: '.homepage-swiper-pagination',
 			clickable: true,
@@ -33,9 +27,12 @@ export function initSwiper( el?: HTMLElement ) {
 			autoplayTimeLeft( s, time, progress ) {
 				progressCircle.style.setProperty( '--progress', 1 - progress );
 			},
+			init: () => {
+				console.log( 'banner swiper init' );
+			},
 		},
 	} );
 }
 document.addEventListener( 'DOMContentLoaded', () => {
-	initSwiper();
+	initBannerSwiper();
 } );
