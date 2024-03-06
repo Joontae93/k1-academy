@@ -11,7 +11,7 @@ import { useSelect } from '@wordpress/data';
 import { initCourseSwiper } from './swiper';
 
 export default function Edit( { attributes, setAttributes } ) {
-	const { label, count, categoryId, align } = attributes;
+	const { label, count, categoryId } = attributes;
 	const [ slides, setSlides ] = useState( null );
 	const [ errorMessage, setErrorMessage ] = useState( null );
 	const terms = useSelect( ( select ) => {
@@ -22,17 +22,19 @@ export default function Edit( { attributes, setAttributes } ) {
 	const swiper = useRef( null );
 
 	const blockProps = useBlockProps( {
-		className: `k1-block-courses-swiper swiper align${ align }`,
+		className: `k1-block-courses-swiper swiper`,
 		ref: swiper,
 	} );
 
 	useEffect( () => {
 		const fetchPosts = async () => {
-			const posts = await apiFetch( {
+			const posts = await apiFetch< [] >( {
 				path: `/k1academy/v1/course-slides?categories=${ categoryId }`,
 			} );
-			if ( posts ) {
+			if ( posts.length > 0 ) {
 				setSlides( posts );
+			} else {
+				setErrorMessage( 'No posts found' );
 			}
 		};
 		if ( categoryId ) {

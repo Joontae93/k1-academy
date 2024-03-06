@@ -27,9 +27,6 @@ export function initBannerSwiper( el?: HTMLElement ) {
 			autoplayTimeLeft( s, time, progress ) {
 				progressCircle.style.setProperty( '--progress', 1 - progress );
 			},
-			init: () => {
-				console.log( 'banner swiper init' );
-			},
 		},
 	} );
 }
