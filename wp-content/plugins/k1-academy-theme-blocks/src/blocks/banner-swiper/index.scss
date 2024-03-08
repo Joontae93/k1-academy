@@ -1,21 +1,14 @@
-%img-height {
-	height: 100%;
-	object-fit: cover;
-	margin: 0 auto;
-	max-height: 40.1rem;
-	border-radius: 1rem;
-}
 #homepage-banner-swiper {
 	--swiper-pagination-color: white;
-	height: 40.1rem;
 
 	.swiper-slide {
-		a.d-block {
-			@extend %img-height;
-		}
+		height: 451px;
 
 		img {
-			@extend %img-height;
+			height: 100%;
+			object-fit: cover;
+			margin: 0 auto;
+			border-radius: 1rem;
 		}
 	}
 
