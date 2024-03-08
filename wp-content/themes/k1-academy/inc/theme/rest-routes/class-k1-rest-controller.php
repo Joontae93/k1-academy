@@ -101,7 +101,7 @@ class K1_REST_Controller extends \WP_REST_Controller {
 		$slides   = new \WP_Query(
 			array(
 				'post_type'      => 'course',
-				'posts_per_page' => 12,
+				'posts_per_page' => $params['count'],
 				'tax_query'      => array(
 					array(
 						'taxonomy' => 'course_cat',

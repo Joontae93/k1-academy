@@ -7,7 +7,7 @@
 
 get_header();
 ?>
-<main class="alignwide">
+<main>
 	<?php the_content(); ?>
 </main>
 <?php

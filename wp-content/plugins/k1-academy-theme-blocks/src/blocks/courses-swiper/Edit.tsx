@@ -16,7 +16,7 @@ export default function Edit( { attributes, setAttributes } ) {
 	const [ errorMessage, setErrorMessage ] = useState( null );
 	const terms = useSelect( ( select ) => {
 		return select( 'core' ).getEntityRecords( 'taxonomy', 'course_cat', {
-			per_page: 12,
+			per_page: count,
 		} );
 	} );
 	const swiper = useRef( null );
@@ -29,7 +29,7 @@ export default function Edit( { attributes, setAttributes } ) {
 	useEffect( () => {
 		const fetchPosts = async () => {
 			const posts = await apiFetch< [] >( {
-				path: `/k1academy/v1/course-slides?categories=${ categoryId }`,
+				path: `/k1academy/v1/course-slides?categories=${ categoryId }&count=${ count }`,
 			} );
 			if ( posts.length > 0 ) {
 				setSlides( posts );

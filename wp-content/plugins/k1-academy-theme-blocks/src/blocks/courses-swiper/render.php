@@ -10,7 +10,13 @@ $slides = new WP_Query(
 	array(
 		'post_type'      => 'course',
 		'posts_per_page' => $attributes['count'],
-		'categories'     => $attributes['categoryId'],
+		'tax_query'      => array(
+			array(
+				'taxonomy' => 'course_cat',
+				'field'    => 'term_id',
+				'terms'    => $attributes['categoryId'],
+			),
+		),
 	)
 );
 ?>
@@ -25,7 +31,7 @@ else :
 		<div class='k1-block-courses-swiper swiper'>
 			<div class="swiper-wrapper">
 				<?php while ( $slides->have_posts() ) : ?>
-					<?php $slides->the_post(); ?>
+				<?php $slides->the_post(); ?>
 				<div class="swiper-slide">
 					<a href="<?php echo esc_url( the_permalink() ); ?>" class="swiper-slide__container">
 						<?php
@@ -49,6 +55,6 @@ else :
 	</div>
 </div>
 
-	<?php
+<?php
 endif;
 wp_reset_postdata();
