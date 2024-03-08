@@ -102,7 +102,13 @@ class K1_REST_Controller extends \WP_REST_Controller {
 			array(
 				'post_type'      => 'course',
 				'posts_per_page' => 12,
-				'categories'     => $params['categories'],
+				'tax_query'      => array(
+					array(
+						'taxonomy' => 'course_cat',
+						'field'    => 'term_id',
+						'terms'    => $params['categories'],
+					),
+				),
 			)
 		);
 		if ( ! $slides->have_posts() ) {

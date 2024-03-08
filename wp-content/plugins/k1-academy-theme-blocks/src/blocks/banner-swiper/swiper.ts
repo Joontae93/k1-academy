@@ -14,9 +14,10 @@ export function initBannerSwiper( el?: HTMLElement ) {
 	const progressCircle = document.querySelector( '.autoplay-progress svg' );
 	const swiper = new Swiper( swiperEl, {
 		modules: [ Pagination, A11y, Autoplay ],
+		loop: true,
 		autoplay: {
 			delay: 5 * 1000,
-			disableOnInteraction: true,
+			pauseOnMouseEnter: true,
 		},
 		spaceBetween: 0,
 		pagination: {
