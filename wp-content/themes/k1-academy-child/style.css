@@ -4,6 +4,11 @@ Theme URI: https://academy.kingdomone.co
 Author: Themeco + Kingdom One
 Author URI: https://kingdomone.co
 Description: A child theme built for K1 Academy
-Version: 1.0.0
+Version: 1.1.0
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Requires at least: 6.0
+Requires PHP: 8.0
+Tested up to: 6.4.3
 Template: pro
 */
