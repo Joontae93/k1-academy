@@ -12,6 +12,10 @@
 			]
 		}
 	],
+	"scripts": {
+		"phpcs": "phpcs wp-content/themes/kingdom-one-academy/**/*.php",
+		"phpcbf": "phpcbf wp-content/themes/kingdom-one-academy/**/*.php"
+	},
 	"config": {
 		"allow-plugins": {
 			"composer/installers": true,
