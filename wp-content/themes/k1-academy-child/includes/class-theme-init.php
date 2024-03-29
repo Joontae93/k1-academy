@@ -23,7 +23,7 @@ class Theme_Init {
 	 * Enqueue child styles & scripts
 	 */
 	public function enqueue_assets() {
-		$theme_assets = require_once get_template_directory() . '/build/global.asset.php';
+		$theme_assets = require_once get_stylesheet_directory() . '/build/global.asset.php';
 		wp_enqueue_style(
 			'global',
 			get_stylesheet_directory_uri() . '/build/index.css',

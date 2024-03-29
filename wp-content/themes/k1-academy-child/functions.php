@@ -14,7 +14,7 @@ require_once get_theme_file_path( '/includes/class-theme-init.php' );
 new Theme_Init();
 
 // LifterLMS Customizations
-require_once get_theme_file_path( '/includes/llms-customizations.php' );
+require_once get_theme_file_path( '/includes/class-lifter-customizations.php' );
 new Lifter_Customizations();
 
 // ===========================================================================
