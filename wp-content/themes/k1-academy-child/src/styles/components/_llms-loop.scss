@@ -3,9 +3,10 @@
 
 .llms-loop-item {
 	border-radius: 7px;
+	margin-right: 10px;
 	margin-bottom: 2em;
 	overflow: hidden;
-	transition: all variables.$transition--standard;
+	transition: all var(--transition--standard);
 	display: inline-block;
 
 	&:hover {
@@ -15,6 +16,7 @@
 
 	&-content {
 		margin: 0;
+
 		.llms-loop-link {
 			.llms-progress {
 				height: 20px;
@@ -26,7 +28,7 @@
 
 			.llms-loop-title {
 				&:hover {
-					color: variables.$color-primary--light;
+					color: var(--color-primary--light);
 				}
 			}
 
@@ -48,4 +50,19 @@
 			}
 		}
 	}
+}
+
+#cs-content
+	> div
+	> div
+	> div
+	> div
+	> div
+	> div
+	> div
+	> section.llms-sd-section.llms-my-courses
+	> div
+	> ul
+	> li.llms-loop-item.post-1214.course.type-course.status-publish.has-post-thumbnail.hentry.course_cat-ministry-safety.is-enrolled.is-incomplete {
+	margin-top: 0px !important;
 }

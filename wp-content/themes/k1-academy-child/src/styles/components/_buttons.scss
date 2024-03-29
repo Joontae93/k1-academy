@@ -5,22 +5,20 @@
 	text-shadow: none;
 	@include mixins.border(variables.$color-primary--light);
 	border-radius: 7em;
-	background-color: variables.$color-primary--light;
+	background-color: var(--color-primary--light);
 	color: white;
 	display: inline-block;
 	padding: 0.575em 0.85em;
 	font-size: 1em;
-	transition: all variables.$transition--standard;
+	transition: all var(--transition--standard);
 
 	&:hover,
 	&:active,
 	&:focus {
-		background-color: variables.$color-primary;
-		text-shadow: none;
-		transform: translateY(-4px);
 		@include mixins.dropShadow;
+		transform: translateY(-4px);
 		background-color: white;
-		color: variables.$color-primary--light;
+		color: var(--color-primary--light);
 	}
 }
 

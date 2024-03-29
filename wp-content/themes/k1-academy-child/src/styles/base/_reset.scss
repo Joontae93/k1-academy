@@ -2,6 +2,12 @@
 
 :root {
 	--color-primary: #{variables.$color-primary};
+	--color-primary--light: #{variables.$color-primary--light};
+	--ar-purple: #{variables.$color-ar-purple};
+	--ab-506: #{variables.$color-ab-506};
+	--color-grey: #{variables.$color-grey};
+
+	--transition--standard: #{variables.$transition--standard};
 }
 
 html {
@@ -14,4 +20,14 @@ html {
 
 header.x-header-landmark {
 	display: none;
+}
+
+// TODO: Sort me!
+#x-site > main > div > ul > div > li > div > div > div > span {
+	margin-bottom: 4em;
+}
+
+#x-site > main > div > ul > div > li > a {
+	position: absolute;
+	bottom: 0;
 }
