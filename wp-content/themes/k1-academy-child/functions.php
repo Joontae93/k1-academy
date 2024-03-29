@@ -6,51 +6,20 @@
  * @package KingdomOne
  */
 
-// =============================================================================
-// TABLE OF CONTENTS
-// -----------------------------------------------------------------------------
-// 01. Enqueue Parent Stylesheet
-// 02. Additional Functions
-// =============================================================================
+use KingdomOne\LifterLMS\Lifter_Customizations;
+use KingdomOne\Theme_Init;
 
-// Enqueue Parent Stylesheet
-// =============================================================================
+// Load Child Theme Initializer class
+require_once get_theme_file_path( '/includes/class-theme-init.php' );
+new Theme_Init();
 
-add_filter( 'x_enqueue_parent_stylesheet', '__return_true' );
+// LifterLMS Customizations
+require_once get_theme_file_path( '/includes/llms-customizations.php' );
+new Lifter_Customizations();
 
-
-// Additional Functions
-// =============================================================================
-
-/**
- * Enqueue child styles & scripts
- */
-function k1_academy_child_enqueue_styles() {
-	$theme_assets = require_once get_template_directory() . '/build/global.asset.php';
-	wp_enqueue_style(
-		'global',
-		get_stylesheet_directory_uri() . '/build/index.css',
-		$theme_assets['dependencies'],
-		$theme_assets['version']
-	);
-	wp_enqueue_script(
-		'global',
-		get_stylesheet_directory_uri() . '/build/index.js',
-		$theme_assets['dependencies'],
-		$theme_assets['version'],
-		array( 'strategy' => 'defer' )
-	);
-	wp_localize_script(
-		'global',
-		'k1AcademyData',
-		array(
-			'root_url' => get_site_url(),
-			'day'      => date( 'D' ), // phpcs:ignore
-			'year'     => date( 'Y' ), // phpcs:ignore
-		)
-	);
-}
-add_action( 'wp_enqueue_scripts', 'k1_academy_child_enqueue_styles' );
+// ===========================================================================
+// Custom Functions
+// ===========================================================================
 
 /**
  * Redirect to custom 404 page when no search results are found
@@ -62,6 +31,3 @@ function k1_academy_redirect_to_custom_404() {
 	}
 }
 add_action( 'template_redirect', 'k1_academy_redirect_to_custom_404' );
-
-
-require_once get_theme_file_path( '/includes/llms-customizations.php' );
