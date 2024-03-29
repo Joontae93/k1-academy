@@ -1,11 +1,10 @@
 import './styles/main.scss';
-import { dashboardControl } from './modules/studentDashboard';
-import { myCopyright } from './modules/utilities';
-import { controller as customSalesApp } from './modules/customSalesForm/controller';
+import { dashboardControl } from './js/modules/studentDashboard';
+import { myCopyright } from './js/modules/utilities';
 
 function init() {
-	myCopyright('Kingdom One');
+	myCopyright( 'Kingdom One' );
 	dashboardControl();
-	if (window.location.pathname === '/sales/') customSalesApp.init();
+	if ( window.location.pathname === '/sales/' ) customSalesApp.init();
 }
 init();
