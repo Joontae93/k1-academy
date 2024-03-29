@@ -1,0 +1,20 @@
+/**
+* These should be sorted!
+*/
+
+.llms-widget-syllabus {
+	.done {
+		&.llms-lesson-complete,
+		&.lesson-complete-placeholder {
+			color: var(--color-primary--light) !important;
+		}
+	}
+}
+
+.llms-question-wrapper
+	ol.llms-question-choices
+	li.llms-choice
+	input:checked
+	+ .llms-marker {
+	background: var(--color-primary--light);
+}
