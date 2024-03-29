@@ -1,0 +1,15 @@
+footer.x-colophon.bottom {
+	background-color: var(--color-primary);
+
+	a {
+		transition: color var(--transition--standard);
+
+		&:hover {
+			color: white;
+		}
+	}
+
+	#copyright {
+		color: white;
+	}
+}
