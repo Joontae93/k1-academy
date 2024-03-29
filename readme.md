@@ -15,6 +15,10 @@ Changes can be pushed to WPE remotes without fear of overriding Cornerstone (vis
 
 ## Changelog
 
+### v1.1.2
+
+-   Bug fix: Enqueue the proper files (in the proper order) to site
+
 ### v1.1.1
 
 -   Migrate global CSS & JS from Cornerstone into Codebase
