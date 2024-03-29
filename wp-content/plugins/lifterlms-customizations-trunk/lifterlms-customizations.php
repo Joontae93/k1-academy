@@ -14,12 +14,12 @@
  * Requires at least: 4.0
  * Tested up to: 4.6
  *
- * @package 		LifterLMS
- * @category 	Core
- * @author 		KJ Roelke
+ * @package         LifterLMS
+ * @category    Core
+ * @author      KJ Roelke
  */
 
-if (!defined('ABSPATH')) {
+if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // restrict direct access
 
@@ -33,9 +33,9 @@ if (!defined('ABSPATH')) {
  * @param  array $dirs    Array of paths to directories to load LifterLMS templates from
  * @return array
  */
-function llms_customizations_overrides_directory($dirs) {
-	array_unshift($dirs, plugin_dir_path(__FILE__) . 'templates');
+function llms_customizations_overrides_directory( $dirs ) {
+	array_unshift( $dirs, plugin_dir_path( __FILE__ ) . 'templates' );
 	// var_dump($dirs);
 	return $dirs;
 }
-add_filter('lifterlms_theme_override_directories', 'llms_customizations_overrides_directory', 10, 1);
+add_filter( 'lifterlms_theme_override_directories', 'llms_customizations_overrides_directory', 10, 1 );
