@@ -1,6 +1,4 @@
-import '../sass/main.scss';
-import '../node_modules/core-js';
-import '../node_modules/regenerator-runtime';
+import './styles/main.scss';
 import { dashboardControl } from './modules/studentDashboard';
 import { myCopyright } from './modules/utilities';
 import { controller as customSalesApp } from './modules/customSalesForm/controller';
