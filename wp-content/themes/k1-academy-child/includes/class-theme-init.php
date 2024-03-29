@@ -25,20 +25,20 @@ class Theme_Init {
 	public function enqueue_assets() {
 		$theme_assets = require_once get_stylesheet_directory() . '/build/global.asset.php';
 		wp_enqueue_style(
-			'global',
-			get_stylesheet_directory_uri() . '/build/index.css',
-			$theme_assets['dependencies'],
+			'k1-academy-child',
+			get_stylesheet_directory_uri() . '/build/global.css',
+			array( 'x-child', ...$theme_assets['dependencies'] ),
 			$theme_assets['version']
 		);
 		wp_enqueue_script(
-			'global',
-			get_stylesheet_directory_uri() . '/build/index.js',
-			$theme_assets['dependencies'],
+			'k1-academy-child',
+			get_stylesheet_directory_uri() . '/build/global.js',
+			array( 'x-site', ...$theme_assets['dependencies'] ),
 			$theme_assets['version'],
 			array( 'strategy' => 'defer' )
 		);
 		wp_localize_script(
-			'global',
+			'k1-academy-child',
 			'k1AcademyData',
 			array(
 				'root_url' => get_site_url(),
