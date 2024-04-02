@@ -1,0 +1,22 @@
+:where(.course-template-default.single.single-course) {
+	.llms-syllabus-wrapper {
+		display: grid;
+		width: 100%;
+		grid-template-columns: repeat(auto-fit, minmax(calc(1200px / 3), 1fr));
+		gap: 2rem;
+		place-content: center;
+	}
+
+	.llms-section-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		align-items: start;
+
+		@container (min-width: 946px) {
+			& {
+				align-items: center;
+			}
+		}
+	}
+}

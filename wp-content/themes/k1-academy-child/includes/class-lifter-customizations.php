@@ -18,6 +18,7 @@ class Lifter_Customizations {
 	public function __construct() {
 		$this->enable_lms_sidebar();
 		$this->wrap_lms_with_container();
+		add_filter( 'lifterlms_theme_override_directories', array( $this, 'lifter_template_overrides' ), 10, 1 );
 	}
 
 	/**
@@ -59,5 +60,16 @@ class Lifter_Customizations {
 				echo '</div>';
 			}
 		);
+	}
+
+	/**
+	 * Adds the templates folder to the list of directories to search for LifterLMS templates
+	 *
+	 * @param  array $dirs Array of paths to directories to load LifterLMS templates from
+	 * @return array
+	 */
+	public function lifter_template_overrides( array $dirs ): array {
+		array_unshift( $dirs, get_stylesheet_directory() . '/templates/lifterlms' );
+		return $dirs;
 	}
 }
