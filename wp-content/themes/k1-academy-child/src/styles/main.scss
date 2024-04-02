@@ -7,9 +7,11 @@
 @use "./components/header";
 @use "./components/footer";
 @use "./components/buttons";
-@use "./components/llms-loop";
 @use "./components/dashboardNav";
 @use "./components/custom-sales-form";
 
 @use "./layout/sales-form";
-@use "./layout/lifterlms";
+
+@use "./lifterlms/lifterlms";
+@use "./lifterlms/llms-loop";
+@use "./lifterlms/single-course/syllabus";

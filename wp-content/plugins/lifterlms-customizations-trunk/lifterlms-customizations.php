@@ -33,9 +33,3 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @param  array $dirs    Array of paths to directories to load LifterLMS templates from
  * @return array
  */
-function llms_customizations_overrides_directory( $dirs ) {
-	array_unshift( $dirs, plugin_dir_path( __FILE__ ) . 'templates' );
-	// var_dump($dirs);
-	return $dirs;
-}
-add_filter( 'lifterlms_theme_override_directories', 'llms_customizations_overrides_directory', 10, 1 );
