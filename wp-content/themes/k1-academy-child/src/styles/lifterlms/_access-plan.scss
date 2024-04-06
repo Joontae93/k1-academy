@@ -1,0 +1,64 @@
+.llms-access-plan {
+	--k1-border-radius: 1rem;
+
+	display: flex;
+	flex-direction: column;
+
+	&-featured {
+		margin-bottom: 4rem;
+	}
+
+	&-content {
+		margin-top: auto;
+		border-top-left-radius: var(--k1-border-radius);
+		border-top-right-radius: var(--k1-border-radius);
+		overflow: hidden;
+	}
+
+	&-title {
+		margin-top: 0;
+	}
+
+	&-footer {
+		border-bottom-left-radius: var(--k1-border-radius);
+		border-bottom-right-radius: var(--k1-border-radius);
+	}
+
+	&.featured {
+		.llms-access-plan {
+			&-featured {
+				background-color: var(--color-primary);
+			}
+
+			&-content {
+				border-color: var(--color-primary);
+				border-top-left-radius: var(--k1-border-radius);
+				border-top-right-radius: var(--k1-border-radius);
+			}
+
+			&-restrictions {
+				a {
+					color: var(--color-primary--light);
+					font-size: 1.4rem;
+				}
+
+				.stamp {
+					background-color: var(--color-primary);
+					padding: 0.5rem 1rem;
+					font-size: 1.6rem;
+					display: block;
+					width: fit-content;
+					margin: 1rem auto;
+					border-radius: 1rem;
+				}
+			}
+			&-footer {
+				border-color: var(--color-primary);
+			}
+		}
+	}
+
+	&-title {
+		background-color: var(--color-primary);
+	}
+}

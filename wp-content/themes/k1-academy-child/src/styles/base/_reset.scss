@@ -2,7 +2,9 @@
 
 :root {
 	--color-primary: #{variables.$color-primary};
+	--color-primary-rgb: 43, 54, 54;
 	--color-primary--light: #{variables.$color-primary--light};
+	--color-primary--light-rgb: 0, 174, 131;
 	--ar-purple: #{variables.$color-ar-purple};
 	--ab-506: #{variables.$color-ab-506};
 	--color-grey: #{variables.$color-grey};
@@ -15,6 +17,10 @@ html {
 
 	body {
 		font-size: 1.6rem;
+
+		a {
+			transition: all var(--transition--standard);
+		}
 	}
 }
 

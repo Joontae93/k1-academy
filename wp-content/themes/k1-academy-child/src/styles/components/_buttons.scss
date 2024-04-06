@@ -1,11 +1,10 @@
 @use "../abstracts/variables";
 @use "../abstracts/mixins";
 
-.x-btn {
-	text-shadow: none;
-	@include mixins.border(variables.$color-primary--light);
-	border-radius: 7em;
-	background-color: var(--color-primary--light);
+%button {
+	text-shadow: none !important;
+	@include mixins.border(var(--color-primary));
+	background-color: var(--color-primary) !important;
 	color: white;
 	display: inline-block;
 	padding: 0.575em 0.85em;
@@ -17,13 +16,14 @@
 	&:focus {
 		@include mixins.dropShadow;
 		transform: translateY(-4px);
-		background-color: white;
-		color: var(--color-primary--light);
+		background-color: var(--color-primary) !important;
+		color: white !important;
 	}
 }
 
 .button,
 [type="submit"],
-.llms-button-secondary {
-	@extend .x-btn;
+.llms-button-secondary,
+.x-btn {
+	@extend %button;
 }

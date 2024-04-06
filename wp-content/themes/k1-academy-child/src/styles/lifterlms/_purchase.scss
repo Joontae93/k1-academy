@@ -1,0 +1,33 @@
+.llms-checkout-wrapper {
+	--k1-border-radius: 1rem;
+	--k1-border-color: var(--color-primary);
+
+	.llms-notice {
+		border-radius: var(--k1-border-radius);
+		border-color: var(--color-primary--light);
+		background-color: rgba(var(--color-primary--light-rgb), 0.6);
+
+		color: black;
+
+		a {
+			color: inherit;
+
+			&:hover,
+			&:focus,
+			&:active {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.llms-checkout-section {
+		border-radius: var(--k1-border-radius);
+		border-color: var(--k1-border-color);
+		overflow: hidden;
+
+		.llms-form-heading {
+			background-color: var(--color-primary);
+			margin-bottom: 3rem;
+		}
+	}
+}
