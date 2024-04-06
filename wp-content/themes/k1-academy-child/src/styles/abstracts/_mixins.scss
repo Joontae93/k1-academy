@@ -16,9 +16,9 @@
 @mixin dropShadow($opacity: 0.35) {
 	box-shadow: 2px 4px 10px 2px rgba(0, 0, 0, $opacity);
 }
-@mixin border($color: variables.$color-primary) {
+@mixin border($color: var(--color-primary)) {
 	border: 3px solid $color;
-	border-radius: 5px;
+	border-radius: 1rem;
 }
 // MEDIA QUERY MANAGER
 // Assumes 1rem = 10px

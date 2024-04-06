@@ -2,7 +2,7 @@
 @use "../abstracts/mixins";
 
 .llms-loop-item {
-	border-radius: 7px;
+	border-radius: 1rem;
 	margin-right: 10px;
 	margin-bottom: 2em;
 	overflow: hidden;
@@ -27,9 +27,7 @@
 			}
 
 			.llms-loop-title {
-				&:hover {
-					color: var(--color-primary--light);
-				}
+				color: var(--color-primary);
 			}
 
 			.llms-loop-item-footer {
@@ -37,7 +35,7 @@
 					font-size: 1em;
 
 					.avatar.photo {
-						@include mixins.border(variables.$color-primary);
+						@include mixins.border(var(--color-primary));
 						border-radius: 50%;
 						height: auto;
 						width: 2em;

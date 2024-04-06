@@ -1,0 +1,60 @@
+@use "../../abstracts/mixins" as m;
+
+.lifterlms {
+	.llms-student-dashboard {
+		.llms-loop-list {
+			margin: 0;
+		}
+
+		.llms-sd {
+			&-header {
+				@include m.displayFlex(column-reverse, flex-start, stretch);
+				margin-bottom: 2em;
+			}
+
+			&-nav {
+				background-color: var(--color-primary);
+				color: white;
+				border-radius: 1rem;
+				padding: 1rem 2rem;
+			}
+
+			&-items {
+				list-style: none;
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 0.5rem 2rem;
+
+				&:before {
+					display: none;
+				}
+
+				a {
+					color: inherit;
+					font-size: 1.8rem;
+				}
+			}
+
+			&-item {
+				transition: background-color var(--transition--standard);
+				padding: 1rem 0.5rem;
+				@include m.border(var(--color-primary));
+
+				&.current,
+				&:hover,
+				&:focus,
+				&:active {
+					background-color: rgba(
+						var(--color-primary--light-rgb),
+						0.3
+					);
+					cursor: pointer;
+				}
+			}
+		}
+
+		.llms-loop-item {
+			@include m.border(var(--color-primary));
+		}
+	}
+}
