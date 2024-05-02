@@ -13,8 +13,8 @@
 		}
 	],
 	"scripts": {
-		"phpcs": "phpcs wp-content/themes/kingdom-one-academy/**/*.php",
-		"phpcbf": "phpcbf wp-content/themes/kingdom-one-academy/**/*.php"
+		"phpcs": "phpcs wp-content/themes/k1-academy-child/ --extensions=php --ignore=wp-content/themes/k1-academy-child/build/",
+		"phpcbf": "phpcbf wp-content/themes/k1-academy-child/ --extensions=php --ignore=wp-content/themes/k1-academy-child/build/"
 	},
 	"config": {
 		"allow-plugins": {
