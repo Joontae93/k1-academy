@@ -17,6 +17,13 @@ class Theme_Init {
 	public function __construct() {
 		add_filter( 'x_enqueue_parent_stylesheet', '__return_true' );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ) );
+		/** Sets Yoast to bottom of Custom Fields */
+		add_filter(
+			'wpseo_metabox_prio',
+			function (): string {
+				return 'low';
+			}
+		);
 	}
 
 	/**

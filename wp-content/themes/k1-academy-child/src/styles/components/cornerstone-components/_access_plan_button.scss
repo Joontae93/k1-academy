@@ -1,0 +1,87 @@
+$block-types: (
+	"primary": (
+		"color": "primary",
+		"text": "white",
+	),
+	"green": (
+		"color": "primary--light",
+		"text": "black",
+	),
+	"night": (
+		"color": "night",
+		"text": "white",
+	),
+	"grey": (
+		"color": "grey",
+		"text": "white",
+	),
+	"purple": (
+		"color": "ar-purple",
+		"text": "black",
+	),
+	"yellow": (
+		"color": "ab-506",
+		"text": "black",
+	),
+	"orange": (
+		"color": "ar-orange",
+		"text": "black",
+	),
+);
+
+.k1-access-plan-button {
+	display: block;
+	border-width: 3px;
+	border-style: solid;
+	border-radius: 10em;
+	border-color: transparent;
+	transition:
+		border-color var(--transition--standard),
+		color var(--transition--standard),
+		transform var(--transition--standard),
+		box-shadow var(--transition--standard),
+		background-color var(--transition--standard);
+	padding-block: 0.575em;
+	padding-inline: 0.85em;
+	width: fit-content;
+
+	&:hover,
+	&:active,
+	&:focus {
+		transform: translateY(-4px);
+		box-shadow: 2px 4px 10px 2px rgba(black, 0.35);
+	}
+
+	&__text {
+		margin: 0.5rem;
+		font-size: 1.2em;
+	}
+
+	@each $color, $prop in $block-types {
+		&-solid-#{$color} {
+			background-color: var(--color-#{map-get($prop, "color")});
+			color: #{map-get($prop, "text")};
+
+			&:hover,
+			&:active,
+			&:focus {
+				border-color: var(--color-#{map-get($prop, "color")});
+				background-color: #{map-get($prop, "text")};
+				color: var(--color-#{map-get($prop, "color")});
+			}
+		}
+
+		&-outline-#{$color} {
+			background-color: transparent;
+			border-color: var(--color-#{map-get($prop, "color")});
+			color: var(--color-#{map-get($prop, "color")});
+
+			&:hover,
+			&:active,
+			&:focus {
+				background-color: var(--color-#{map-get($prop, "color")});
+				color: #{map-get($prop, "text")};
+			}
+		}
+	}
+}
