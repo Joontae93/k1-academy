@@ -1,12 +1,19 @@
 @use "../abstracts/variables";
 
 :root {
+	--ar-purple: #{variables.$color-ar-purple};
+	--ab-506: #{variables.$color-ab-506};
+
+	--color-ar-orange: #{variables.$color-ar-orange};
+	--color-ar-purple: var(--ar-purple);
+	--color-ab-506: var(--ab-506);
+	--color-ar-yellow: var(--ab-506);
+
 	--color-primary: #{variables.$color-primary};
 	--color-primary-rgb: 43, 54, 54;
 	--color-primary--light: #{variables.$color-primary--light};
 	--color-primary--light-rgb: 0, 174, 131;
-	--ar-purple: #{variables.$color-ar-purple};
-	--ab-506: #{variables.$color-ab-506};
+	--color-night: #{variables.$color-night};
 	--color-grey: #{variables.$color-grey};
 
 	--transition--standard: #{variables.$transition--standard};

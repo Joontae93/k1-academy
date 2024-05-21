@@ -15,6 +15,13 @@ Changes can be pushed to WPE remotes without fear of overriding Cornerstone (vis
 
 ## Changelog
 
+### v1.3.0
+
+-   Created SCSS file for new Access Plan Component
+-   Added JSON file for Access Plan Component parameters
+-   Added colors to CSS variables
+-   Shoved Yoast custom metabox to the bottom
+
 ### v1.2.2
 
 -   Added LifterLMS Customizations into theme folder

@@ -1,0 +1,56 @@
+{
+	"button_text": {
+		"initial": "Buy Now",
+		"label": "Button Text",
+		"type": "text"
+	},
+	"access_plan_id": {
+		"type": "text",
+		"placeholder": "1234",
+		"label": "Access Plan ID"
+	},
+	"color": {
+		"type": "select",
+		"label": "Color",
+		"initial": "Primary",
+		"options": [
+			{
+				"label": "Primary",
+				"value": "primary"
+			},
+			{
+				"label": "Green",
+				"value": "green"
+			},
+			{
+				"label": "Night",
+				"value": "night"
+			},
+			{
+				"label": "Grey",
+				"value": "grey"
+			},
+			{
+				"label": "Purple",
+				"value": "purple"
+			},
+			{
+				"label": "Yellow",
+				"value": "yellow"
+			},
+			{
+				"label": "Orange",
+				"value": "orange"
+			}
+		]
+	},
+	"style": {
+		"type": "choose",
+		"label": "Style",
+		"initial": "Solid",
+		"options": [
+			{ "value": "solid", "label": "Solid" },
+			{ "value": "outline", "label": "Outline" }
+		]
+	}
+}
