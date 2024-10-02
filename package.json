@@ -1,6 +1,6 @@
 {
 	"name": "k1-academy-child",
-	"version": "2.0.1",
+	"version": "2.0.2",
 	"description": "The child theme of Pro for K1 Academy",
 	"prettier": "@wordpress/prettier-config",
 	"browserslist": [
@@ -13,6 +13,9 @@
 	"author": "Kingdom One",
 	"license": "GPL-3.0-or-later",
 	"devDependencies": {
-		"@wordpress/scripts": "^27.7.0"
+		"@wordpress/scripts": "^30.0.2"
+	},
+	"overrides": {
+		"puppeteer-core": "^23.4.0"
 	}
 }
